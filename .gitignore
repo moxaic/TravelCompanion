@@ -7,6 +7,9 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
+*.log
+*.env.*
+firebase.config.ts
 web-build/
 
 # macOS
