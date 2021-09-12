@@ -7,7 +7,7 @@ const Avatar = ({ size }) => {
   return (
     <View style={styles.view}>
       <Image style={styles.image} />
-      <Text style={styles.uploadText}>Upload Image</Text>
+      {/* <Text style={styles.uploadText}>Upload Image</Text> */}
     </View>
   );
 };

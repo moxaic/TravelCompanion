@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   container: {
     margin: 30,
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
   input: {
     borderColor: gradient.bottom,
@@ -80,15 +80,15 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderRadius: 999,
     padding: 4,
+    paddingHorizontal: 20,
     marginTop: 8,
   },
   signUpButton: {
     alignItems: "center",
     borderRadius: 999,
-    height: 40,
-    marginTop: -20,
     backgroundColor: "green",
-    width: 80,
+    paddingVertical: 13,
+    paddingHorizontal: 60,
     justifyContent: "center",
     marginVertical: 10,
   },
