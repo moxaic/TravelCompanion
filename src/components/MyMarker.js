@@ -5,7 +5,6 @@ const MyMarker = ({ coordinate, myKey, setClickedMarker }) => {
   const onPress = () => {
     setClickedMarker(myKey);
   };
-
   return <Marker {...{ coordinate, onPress }} />;
 };
 
