@@ -5,6 +5,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 
 import Navigation from "./src/navigation";
+import ContextProvider from "./src/contexts";
 
 const App = () => {
   const theme = {
@@ -16,10 +17,12 @@ const App = () => {
 
   return (
     <NavigationContainer {...{ theme }}>
-      <SafeAreaProvider>
-        <StatusBar style="auto" />
-        <Navigation />
-      </SafeAreaProvider>
+      <ContextProvider>
+        <SafeAreaProvider>
+          <StatusBar style="auto" />
+          <Navigation />
+        </SafeAreaProvider>
+      </ContextProvider>
     </NavigationContainer>
   );
 };

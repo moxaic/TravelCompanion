@@ -9,7 +9,7 @@ npm-debug.*
 *.orig.*
 *.log
 *.env.*
-firebase.config.ts
+/src/config/firebase.config.js
 web-build/
 
 # macOS

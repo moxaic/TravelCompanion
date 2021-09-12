@@ -1,8 +1,9 @@
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+
+import GradientSafeAreaView from "../components/GradientSafeAreaView";
 
 const Profile = () => {
-  return <SafeAreaView></SafeAreaView>;
+  return <GradientSafeAreaView></GradientSafeAreaView>;
 };
 
 export default Profile;
