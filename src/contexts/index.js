@@ -1,9 +1,14 @@
 import React from "react";
 
+import Auth from "./Auth";
 import LocationPermissions from "./LocationPermissions";
 
 const ContextProvider = ({ children }) => {
-  return <LocationPermissions>{children}</LocationPermissions>;
+  return (
+    <Auth>
+      <LocationPermissions>{children}</LocationPermissions>
+    </Auth>
+  );
 };
 
 export default ContextProvider;

@@ -28,7 +28,7 @@ const LogIn = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
   logInButton: {
     alignItems: "center",

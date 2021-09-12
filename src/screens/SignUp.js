@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 
 import Avatar from "../components/Avatar";
 import GradientSafeAreaView from "../components/GradientSafeAreaView";
+import { useAuthContext } from "../contexts/Auth";
+import { database } from "../config/firebase.config";
 import { gradient } from "../utils/colors";
 
 const SignUp = ({ navigation }) => {
-  const [name, setName] = useState();
-  const [username, setUsername] = useState();
+  const { name, setName, username, setUsername } = useAuthContext();
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
+    if (name === "" || username === "" || name === null || username === null) {
+      console.warn("Name and username cannot be blank");
+      return;
+    }
+    // TODO(@moxaic): check if entered username already exists
+    await database.ref(`users/${username}`).set({
+      name,
+      username,
+    });
     navigation.navigate("MainFlow"); // TODO(@moxaic): store token in local storage and conditionaly change between Auth and default flow
   };
 

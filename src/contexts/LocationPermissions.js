@@ -8,9 +8,8 @@ import {
 
 const LocationPermissionsContext = createContext();
 
-const useLocationPermissionsContext = () => {
-  return useContext(LocationPermissionsContext);
-};
+const useLocationPermissionsContext = () =>
+  useContext(LocationPermissionsContext);
 
 const LocationPermissions = ({ children }) => {
   const [value] = useState(() => ({
