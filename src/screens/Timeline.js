@@ -46,7 +46,7 @@ const Timeline = () => {
   const [tripRef, setTripRef] = useState(null);
   const [keys, setKeys] = useState([]);
   const [locations, setLocations] = useState([]);
-  const [clickedMarker, setClickedMarker] = useState();
+  const [clickedMarker, setClickedMarker] = useState(null);
   const [tripStatus, setTripStatus] = useState("completed");
   const [locationName, setLocationName] = useState("");
   const [experience, setExperience] = useState("");
@@ -120,9 +120,8 @@ const Timeline = () => {
 
       await startLocationUpdatesAsync(TASK_BACKGROUND_LOCATION, {
         accuracy: Accuracy.Lowest,
-        // timeInterval: 300000,
+        timeInterval: 3000000,
         distanceInterval: 0,
-        timeInterval: 10000,
         foregroundService: {
           notificationTitle: "Using your location",
           notificationBody:
@@ -184,7 +183,7 @@ const Timeline = () => {
 
   return (
     <GradientSafeAreaView>
-      {clickedMarker === null ? (
+      {tripStatus === "completed" ? (
         <TouchableOpacity
           style={styles.tripStatusButton}
           onPress={tripStatusButton.fx}
